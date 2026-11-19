@@ -1,0 +1,55 @@
+# Marca de ejemplo (ficticia). Copiá esta carpeta como marcas/<tu-marca>/ y completala
+# con los datos reales de la cuenta. Todo reel de esta marca respeta su identidad.
+
+nombre: Salón Demo
+instagram: "@salon.demo"
+rubro: peluquería
+especialidad: Estilista y Colorista
+ciudad: Ciudad Demo
+direccion:
+whatsapp: ""
+whatsapp_link: ""
+
+colores:                # medirlos sobre el logo real (k-means de píxeles sólidos)
+  primario: "#CE1269"
+  secundario: "#861196"
+  terciario: "#961069"
+  claro: "#E69CC5"      # para fondos y degradés suaves
+  acento: "#C9A86A"
+  texto: "#FFFFFF"
+
+tipografias:
+  titulos: Berkshire Swash  # solo en títulos cortos, no en subtítulos
+  texto: Poppins            # sans limpia para subtítulos y textos largos
+
+logo: assets/logo.png       # no incluido: poné el logo de la marca (PNG transparente)
+logo_uso: >-
+  Sobre fondos oscuros o sobre video, poner el logo en una placa clara para que se lea.
+
+tono: >-
+  Cálido, cercano y de vos. Frases cortas con exclamaciones y emojis afectivos.
+  Agradece a la clienta por su nombre o @. Cuenta la historia del cabello
+  ("llegó débil, se fue radiante") y suma un consejo de cuidado.
+
+mensaje:                # salida/para-ana.txt (fabrica.py): quien publica desde su teléfono
+  para: Ana
+  saludo: "💞"
+
+cta_por_defecto: "Consultá por MD o WhatsApp"
+
+preferencias:
+  ritmo: medio            # tranquilo | medio | rapido (conocimiento/ritmo.yaml)
+
+hashtags_base: []
+
+contenido_habitual:     # lo que más publica (para inferir el formato)
+  - resultados de color y rulos (transformación / antes-después)
+  - peinados de novia y de 15 años
+  - consejos de cuidado del cabello
+  - promos (vouchers de regalo)
+
+# Carpeta local (por ejemplo, sincronizada con Google Drive para escritorio) donde llegan
+# los videos sin compresión.
+entrada_drive:
+  carpeta: "Salón Demo — videos para reels"
+  local: ""

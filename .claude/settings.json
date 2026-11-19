@@ -1,0 +1,14 @@
+{
+  "env": {
+    "HYPERFRAMES_NO_TELEMETRY": "1",
+    "DO_NOT_TRACK": "1"
+  },
+  "permissions": {
+    "deny": [
+      "mcp__metricool__createScheduledPost",
+      "mcp__metricool__createScheduledPostForReview",
+      "mcp__metricool__updateScheduledPost",
+      "mcp__metricool__sendScheduledPostForReview"
+    ]
+  }
+}

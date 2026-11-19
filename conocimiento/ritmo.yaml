@@ -1,0 +1,71 @@
+# Presets de ritmo por formato (fundamento en 08-ritmo.md).
+# El guion elige bpm y beats por toma dentro de estos rangos; verificar.py --pedido
+# chequea el guion contra el preset (criterios R2 y O12 de la rúbrica).
+#
+#   duracion: [min, max] del reel en segundos, sin contar el cierre
+#   toma:     [min, max] de una toma común, en segundos
+#   revelado: [min, max] de la toma del momento wow (la que se vino a ver)
+#   bpm:      [min, max] del tempo (beat = 60 / bpm)
+#   excepciones: tomas que pueden quedar fuera de `toma`
+
+formatos:
+  transformacion:   &transformacion
+    duracion: [15, 20]
+    toma: [1.5, 3.0]
+    revelado: [3.0, 4.0]
+    bpm: [95, 110]
+    excepciones: "barridos de cámara de 0,4-1 s entre tomas"
+  antes-despues: *transformacion
+  revelado-corto:             # antes → después corto (15-formato-segun-material.md): 17 reels medidos, 10/2026
+    duracion: [7, 14]         # medidos: de 4,9 a 14,1 s (mediana 12)
+    toma: [1.5, 4.5]          # el antes abre y dura 2,6-8,7 s (mediana 3,9), en una o dos tomas
+    revelado: [2.0, 9.5]      # el resultado se sostiene 2,3-9,4 s (mediana 5,5); con fotos, en 3-4 tomas de ~2 s
+    bpm: [80, 130]            # el de la canción elegida
+    excepciones: "una sola transición, del antes al después; sin placa de cierre: termina en el resultado y vuelve a empezar (el CTA va en la descripción)"
+  tendencia:                  # una tendencia con su audio (14-tendencias.md); manda lo medido en sus ejemplos
+    duracion: [9, 16]         # «La artista…»: 10,9-14,3 s; «Cosas que sí dan miedo»: 10,8-15,9 s (10/2026, 14-tendencias.md)
+    toma: [1.0, 3.0]          # un rótulo por compás (~1,5 s, «La artista» a 156 bpm); un cartel cada 2-2,5 s con su acción («Cosas que sí dan miedo», 10/2026)
+    revelado: [3.0, 7.0]      # el resultado se sostiene: 3,0-6,7 s en los medidos
+    bpm: [90, 170]            # el de la canción de la tendencia, verificado con los cortes (bpm_grilla)
+    excepciones: "un destello de 0,1-0,4 s antes del revelado; cortes en el compás, no en cualquier beat"
+  proceso:
+    duracion: [18, 25]
+    toma: [1.0, 2.0]          # pasos acelerados: cada toma cuenta un paso
+    revelado: [3.0, 4.0]
+    bpm: [100, 115]
+    excepciones: "barridos de 0,4-1 s; una toma con voz: true dura lo que la frase, hasta 4 s"
+  promo:
+    duracion: [12, 18]
+    toma: [2.0, 3.0]
+    revelado: [2.0, 3.0]
+    bpm: [95, 110]
+    excepciones: "barridos de 0,4-1 s; tarjetas en foco (vouchers, precios): hasta 1,5 s por tarjeta más el repaso"
+  fotos:
+    duracion: [14, 20]
+    toma: [2.0, 3.0]          # cada foto con movimiento (acercamiento, 2.5D)
+    revelado: [3.0, 4.0]
+    bpm: [90, 105]
+    excepciones: "grilla: una foto por beat"
+  relato:                     # reseña, efeméride, historia contada a cámara (13-divulgacion.md)
+    duracion: [60, 150]       # manda la historia (y / pero / por lo tanto), no un número. 60-90 s rinde mejor (Socialinsider);
+                              # más largo, si cortar deja frases o ideas incompletas (Fernando, 04/10: peor que un reel largo)
+    toma: [1.0, 20.0]         # un tramo de voz dura lo que dura la idea (1 s si va debajo de una placa)...
+    revelado: [2.0, 6.0]
+    bpm: [80, 110]
+    cambio_visual_max: 7.0    # ...pero la imagen cambia (corte, inserto o placa) cada ≤7 s
+    excepciones: "las tomas largas se cortan con insertos; el gancho y el cierre van a cámara"
+  tip-hablado:
+    duracion: [20, 45]        # manda el habla, no el beat
+    toma: [2.0, 6.0]
+    revelado: [2.0, 4.0]
+    bpm: [90, 110]
+    excepciones: "cortes de silencio"
+
+# Ajuste por pedido (pedido.yaml › ritmo) o por marca (marca.yaml › preferencias.ritmo):
+#   tranquilo → duraciones de toma ×1,25 y bpm hacia el mínimo
+#   medio     → el preset tal cual (default)
+#   rapido    → ×0,75 y bpm hacia el máximo (tendencias, música muy rápida)
+ajustes:
+  tranquilo: 1.25
+  medio: 1.0
+  rapido: 0.75

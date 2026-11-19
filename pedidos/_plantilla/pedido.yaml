@@ -1,0 +1,31 @@
+# Variables del pedido. Lo vacío lo decide la factory a partir de la
+# referencia y las instrucciones; lo que se completa acá manda.
+
+marca: salon-demo
+formato:              # reel: transformacion | antes-despues | proceso | tip-hablado | promo | fotos
+                      # otros: historia | foto | carrusel
+estilo: desde-referencia   # o el nombre de una carpeta de estilos/
+duracion_s:           # vacío = la del preset del formato (conocimiento/ritmo.yaml)
+ritmo:                # vacío = el de la marca | tranquilo | medio | rapido
+relacion: "9:16"      # 9:16 | 4:5
+
+musica:               # ver conocimiento/09-audio.md
+  modo: sintetica     # sintetica | archivo | instagram
+  fuente:             # archivo: ruta al tema libre de derechos | instagram: link de un reel que use el audio
+  inicio:             # vacío = el mejor tramo según analizar_audio.py
+
+subtitulos:
+  activos:            # vacío = sí, si hay habla
+  estilo:
+
+textos:
+  gancho:             # vacío = lo propone Claude
+  cierre:             # vacío = cta_por_defecto de la marca
+
+variantes:
+  cantidad: 1
+  eje:                # gancho | duracion | estilo
+
+voz_en_off: off       # off | texto a locutar (Kokoro ef_dora, local)
+
+notas: ""             # aclaraciones de Fernando que no entran en las instrucciones

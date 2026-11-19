@@ -1,0 +1,262 @@
+# Temas libres de derechos para el modo `archivo` (herramientas/musica.py).
+# Los MP3 van en musica/libre/ (fuera de git); se vuelven a bajar desde `url`.
+'1048':
+  archivo: musica/libre/mixkit-1048.mp3
+  artista: Michael Ramir C.
+  bpm: 117.5
+  duracion: PT1M53S
+  genero: Pop
+  licencia: Mixkit Stock Music Free License
+  titulo: Turn This Up a Little Louder!
+  url: https://assets.mixkit.co/music/1048/1048.mp3
+  voz_db: -7.9
+'1077':
+  archivo: musica/libre/mixkit-1077.mp3
+  artista: Michael Ramir C.
+  bpm: 117.5
+  duracion: PT1M36S
+  genero: Funk
+  licencia: Mixkit Stock Music Free License
+  titulo: Sounds Good
+  url: https://assets.mixkit.co/music/1077/1077.mp3
+  voz_db: -20.3
+'1087':
+  archivo: musica/libre/mixkit-1087.mp3
+  artista: Michael Ramir C.
+  bpm: 99.4
+  duracion: PT1M40S
+  genero: Pop
+  licencia: Mixkit Stock Music Free License
+  titulo: A Special Feeling
+  url: https://assets.mixkit.co/music/1087/1087.mp3
+  voz_db: -44.8
+'1124':
+  archivo: musica/libre/mixkit-1124.mp3
+  artista: Michael Ramir C.
+  bpm: 92.3
+  duracion: PT1M41S
+  genero: Pop
+  licencia: Mixkit Stock Music Free License
+  titulo: You and Me
+  url: https://assets.mixkit.co/music/1124/1124.mp3
+  voz_db: -49.1
+'1140':
+  archivo: musica/libre/mixkit-1140.mp3
+  artista: Michael Ramir C.
+  bpm: 117.5
+  duracion: PT1M38S
+  genero: Funk
+  licencia: Mixkit Stock Music Free License
+  titulo: Funkee Monkeee
+  url: https://assets.mixkit.co/music/1140/1140.mp3
+  voz_db: -16.6
+'1164':
+  archivo: musica/libre/mixkit-1164.mp3
+  artista: Michael Ramir C.
+  bpm: 117.5
+  duracion: PT1M49S
+  genero: Pop
+  licencia: Mixkit Stock Music Free License
+  titulo: It's A Cool Thing
+  url: https://assets.mixkit.co/music/1164/1164.mp3
+  voz_db: -43.6
+'158':
+  archivo: musica/libre/mixkit-158.mp3
+  artista: Alejandro Magaña (A. M.)
+  bpm: 117.5
+  duracion: PT1M40S
+  genero: Pop
+  licencia: Mixkit Stock Music Free License
+  titulo: Happy Times
+  url: https://assets.mixkit.co/music/158/158.mp3
+  voz_db: -24.1
+'173':
+  archivo: musica/libre/mixkit-173.mp3
+  artista: Alejandro Magaña (A. M.)
+  bpm: 117.5
+  duracion: PT1M40S
+  genero: Synthpop
+  licencia: Mixkit Stock Music Free License
+  titulo: Better Times are Coming
+  url: https://assets.mixkit.co/music/173/173.mp3
+  voz_db: -29.4
+'184':
+  archivo: musica/libre/mixkit-184.mp3
+  artista: Andrew Ev
+  bpm: 117.5
+  duracion: PT3M50S
+  genero: Ambient
+  licencia: Mixkit Stock Music Free License
+  titulo: Vastness
+  url: https://assets.mixkit.co/music/184/184.mp3
+  voz_db: -47.3
+'188':
+  archivo: musica/libre/mixkit-188.mp3
+  artista: Andrew Ev
+  bpm: 123.0
+  duracion: PT3M46S
+  genero: Atmospheres
+  licencia: Mixkit Stock Music Free License
+  titulo: Echoes
+  url: https://assets.mixkit.co/music/188/188.mp3
+  voz_db: -45.3
+'22':
+  archivo: musica/libre/mixkit-22.mp3
+  artista: Ahjay Stelino
+  bpm: 123.0
+  duracion: PT3M19S
+  genero: Corporate Music
+  licencia: Mixkit Stock Music Free License
+  titulo: Piano Reflections
+  url: https://assets.mixkit.co/music/22/22.mp3
+  voz_db: -27.5
+'228':
+  archivo: musica/libre/mixkit-228.mp3
+  artista: Arulo
+  bpm: 103.4
+  duracion: PT2M24S
+  genero: Contemporary R&B
+  licencia: Mixkit Stock Music Free License
+  titulo: Fashion
+  url: https://assets.mixkit.co/music/228/228.mp3
+  voz_db: -44.6
+'234':
+  archivo: musica/libre/mixkit-234.mp3
+  artista: Arulo
+  bpm: 143.6
+  duracion: PT1M58S
+  genero: Chillout
+  licencia: Mixkit Stock Music Free License
+  titulo: Thinking About You
+  url: https://assets.mixkit.co/music/234/234.mp3
+  voz_db: -17.4
+'250':
+  archivo: musica/libre/mixkit-250.mp3
+  artista: Arulo
+  bpm: 136.0
+  duracion: PT1M42S
+  genero: Contemporary R&B
+  licencia: Mixkit Stock Music Free License
+  titulo: Island Beat
+  url: https://assets.mixkit.co/music/250/250.mp3
+  voz_db: -26.1
+'288':
+  archivo: musica/libre/mixkit-288.mp3
+  artista: Arulo
+  bpm: 112.3
+  duracion: PT1M40S
+  genero: Pop
+  licencia: Mixkit Stock Music Free License
+  titulo: One More Dance
+  url: https://assets.mixkit.co/music/288/288.mp3
+  voz_db: -27.6
+'327':
+  archivo: musica/libre/mixkit-327.mp3
+  artista: Arulo
+  bpm: 107.7
+  duracion: PT1M38S
+  genero: Pop
+  licencia: Mixkit Stock Music Free License
+  titulo: Aerobic Fashion
+  url: https://assets.mixkit.co/music/327/327.mp3
+  voz_db: -25.6
+'371':
+  archivo: musica/libre/mixkit-371.mp3
+  artista: Arulo
+  bpm: 129.2
+  duracion: PT2M4S
+  genero: House
+  licencia: Mixkit Stock Music Free License
+  titulo: Cat Walk
+  url: https://assets.mixkit.co/music/371/371.mp3
+  voz_db: -23.5
+'614':
+  archivo: musica/libre/mixkit-614.mp3
+  artista: Eugenio Mininni
+  bpm: 136.0
+  duracion: PT2M40S
+  genero: Film Score
+  licencia: Mixkit Stock Music Free License
+  titulo: Silent Descent
+  url: https://assets.mixkit.co/music/614/614.mp3
+  voz_db: -30.3
+'682':
+  archivo: musica/libre/mixkit-682.mp3
+  artista: Grigoriy Nuzhny
+  bpm: 143.6
+  duracion: PT1M53S
+  genero: Film Score
+  licencia: Mixkit Stock Music Free License
+  titulo: Classical vibes 2
+  url: https://assets.mixkit.co/music/682/682.mp3
+  voz_db: -58.6
+'801':
+  archivo: musica/libre/mixkit-801.mp3
+  artista: Michael Ramir C.
+  bpm: 143.6
+  duracion: PT1M50S
+  genero: Pop
+  licencia: Mixkit Stock Music Free License
+  titulo: Happy Home
+  url: https://assets.mixkit.co/music/801/801.mp3
+  voz_db: -14.0
+'831':
+  archivo: musica/libre/mixkit-831.mp3
+  artista: Michael Ramir C.
+  bpm: 117.5
+  duracion: PT1M32S
+  genero: Children
+  licencia: Mixkit Stock Music Free License
+  titulo: I Love You Mommy
+  url: https://assets.mixkit.co/music/831/831.mp3
+  voz_db: -19.0
+'837':
+  archivo: musica/libre/mixkit-837.mp3
+  artista: Michael Ramir C.
+  bpm: 117.5
+  duracion: PT1M39S
+  genero: Disco
+  licencia: Mixkit Stock Music Free License
+  titulo: Life is a Dream
+  url: https://assets.mixkit.co/music/837/837.mp3
+  voz_db: -23.4
+'839':
+  archivo: musica/libre/mixkit-839.mp3
+  artista: Michael Ramir C.
+  bpm: 123.0
+  duracion: PT2M20S
+  genero: Folk Pop
+  licencia: Mixkit Stock Music Free License
+  titulo: Tears of Joy
+  url: https://assets.mixkit.co/music/839/839.mp3
+  voz_db: -24.7
+'872':
+  archivo: musica/libre/mixkit-872.mp3
+  artista: Michael Ramir C.
+  bpm: 112.3
+  duracion: PT1M28S
+  genero: Funk
+  licencia: Mixkit Stock Music Free License
+  titulo: Gimme that Groove!
+  url: https://assets.mixkit.co/music/872/872.mp3
+  voz_db: -48.6
+'935':
+  archivo: musica/libre/mixkit-935.mp3
+  artista: Michael Ramir C.
+  bpm: 123.0
+  duracion: PT1M38S
+  genero: Disco
+  licencia: Mixkit Stock Music Free License
+  titulo: Disco Ain't Old School
+  url: https://assets.mixkit.co/music/935/935.mp3
+  voz_db: -23.4
+'983':
+  archivo: musica/libre/mixkit-983.mp3
+  artista: Michael Ramir C.
+  bpm: 129.2
+  duracion: PT1M46S
+  genero: Funk
+  licencia: Mixkit Stock Music Free License
+  titulo: Cherry on Top
+  url: https://assets.mixkit.co/music/983/983.mp3
+  voz_db: -10.9

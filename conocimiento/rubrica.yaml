@@ -1,0 +1,380 @@
+# Rúbrica de evaluación de reels (47 criterios: marketing, relato, oficio de edición y calidad percibida).
+# Se aplica en el control de calidad (paso 5) y el resultado va a salida/evaluacion.md.
+#
+# peso:
+#   bloqueante  → si falla, el reel NO se entrega (se corrige y se vuelve a evaluar)
+#   importante  → 0 / 1 / 2 puntos, vale doble
+#   deseable    → 0 / 1 / 2 puntos
+# como:
+#   auto    → lo mide verificar.py
+#   visual  → Claude mirando la hoja de control (reel-qa.jpg) y los fotogramas
+#   guion   → se verifica contra plan/guion.yaml y las instrucciones
+#   humano  → solo Fernando o Ana pueden confirmarlo
+# evidencia: 🟢 oficial · 🟡 medido · ⚪ práctica (ver conocimiento/README.md)
+# aplica_a: formatos donde cuenta el criterio (reel, historia, foto, carrusel).
+#   herramientas/puntaje.py filtra por formato y calcula el puntaje.
+#
+# Veredicto:
+#   - algún bloqueante falla → CORREGIR
+#   - puntaje ≥ 75 % del máximo → ENTREGAR
+#   - si no → ENTREGAR CON OBSERVACIONES (decide Fernando)
+
+tecnico:
+  - id: T1
+    criterio: "1080×1920, H.264, ≥30 fps, sin bordes ni barras negras"
+    peso: bloqueante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: auto
+    evidencia: 🟢
+    ref: 02-anatomia-del-reel.md#especificaciones
+  - id: T2
+    criterio: "Duración ≤ 3 min: los más largos no se recomiendan a quienes no siguen la cuenta (el tope era 90 s hasta enero de 2025). Lo que dura cada formato lo mide R2"
+    peso: bloqueante
+    aplica_a: [reel, historia]
+    como: auto
+    evidencia: 🟢
+    ref: 02-anatomia-del-reel.md#duración
+  - id: T3
+    criterio: "Se publica con audio: o el MP4 trae música, o la entrega dice qué audio poner y de qué biblioteca (Sound Collection si la cuenta es de empresa)"
+    peso: bloqueante
+    aplica_a: [reel]
+    como: guion
+    evidencia: 🟢
+    ref: 01-como-distribuye-instagram.md
+  - id: T4
+    criterio: "Sin marcas de agua de terceros (TikTok, CapCut, apps) ni material ajeno"
+    peso: bloqueante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: 🟢
+    ref: 01-como-distribuye-instagram.md#originalidad-
+  - id: T5
+    criterio: "Texto y logo dentro de la zona segura: entre el 14 % y el 65 % del alto, y del 6 % al 94 % del ancho"
+    peso: bloqueante
+    aplica_a: [reel, historia]
+    como: visual
+    evidencia: 🟢
+    ref: 02-anatomia-del-reel.md#zonas-seguras-
+
+gancho:
+  - id: G1
+    criterio: "El primer cuadro muestra lo más fuerte del material (resultado, cara, acción), no un logo ni una intro"
+    peso: importante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: ⚪
+    ref: 02-anatomia-del-reel.md#gancho-0-a-3-s
+  - id: G2
+    criterio: "Se entiende sin sonido en ≤1 s: una imagen clara y como máximo una idea de texto"
+    peso: importante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: 🟡
+    ref: 02-anatomia-del-reel.md#gancho-0-a-3-s
+  - id: G3
+    criterio: "El gancho promete algo que el reel cumple (no es carnada)"
+    peso: deseable
+    aplica_a: [reel, carrusel]
+    como: guion
+    evidencia: ⚪
+    ref: 02-anatomia-del-reel.md#recompensa-y-cierre
+
+ritmo_y_retencion:
+  - id: R1
+    criterio: "Ninguna toma se estanca: los cortes caen en el beat, y las fotos fijas tienen movimiento"
+    peso: importante
+    aplica_a: [reel]
+    como: guion
+    evidencia: ⚪
+    ref: 02-anatomia-del-reel.md#desarrollo-y-ritmo
+  - id: R2
+    criterio: "La duración (sin el cierre) está dentro del rango del formato en ritmo.yaml"
+    peso: deseable
+    aplica_a: [reel]
+    como: auto   # verificar.py --pedido
+    evidencia: 🟢/🟡/⚪
+    ref: 08-ritmo.md
+  - id: R3
+    criterio: "La recompensa llega antes del cierre y el cierre dura ≤2 s"
+    peso: importante
+    aplica_a: [reel]
+    como: guion
+    evidencia: ⚪
+    ref: 02-anatomia-del-reel.md#recompensa-y-cierre
+  - id: R4
+    criterio: "Hay un motivo para mandárselo a alguien (resultado llamativo, tip útil, humor, llamado a compartir)"
+    peso: importante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: 🟢
+    ref: 01-como-distribuye-instagram.md#las-tres-señales-que-más-pesan-
+
+texto:
+  - id: X1
+    criterio: "Legible en todas las tomas: contraste suficiente (placa o sombra), letra ≥42 px semibold"
+    peso: importante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: 🟡/⚪
+    ref: 02-anatomia-del-reel.md#texto-en-pantalla
+  - id: X2
+    criterio: "El reel no es mayoritariamente texto; el texto acompaña la imagen"
+    peso: bloqueante
+    aplica_a: [reel, historia]
+    como: visual
+    evidencia: 🟢
+    ref: 01-como-distribuye-instagram.md
+  - id: X3
+    criterio: "Si hay habla, lleva subtítulos (y la entrega recuerda el sticker de subtítulos automáticos como alternativa)"
+    peso: importante
+    aplica_a: [reel, historia]
+    como: guion
+    evidencia: 🟢
+    ref: 02-anatomia-del-reel.md#texto-en-pantalla
+  - id: X4
+    criterio: "Sin errores de ortografía ni cortes de línea desparejos (palabra sola en una línea)"
+    peso: deseable
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: ⚪
+    ref: —
+
+marca:
+  - id: M1
+    criterio: "Colores, tipografía y tratamiento de texto de marca.yaml / del estilo, sin variaciones"
+    peso: importante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: ⚪ (Ehrenberg-Bass)
+    ref: 03-marca.md#activos-distintivos--ehrenberg-bass-sharp-romaniuk
+  - id: M2
+    criterio: "Los textos salen de las palabras de ella; toda adaptación está declarada en el guion"
+    peso: importante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: guion
+    evidencia: ⚪
+    ref: 03-marca.md#tono-de-voz
+  - id: M3
+    criterio: "No altera el resultado: sin filtros que cambien el color del pelo ni efectos que tapen el trabajo"
+    peso: bloqueante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: 🟢 (originalidad) / ⚪
+    ref: 03-marca.md#autenticidad-frente-a-producción
+  - id: M4
+    criterio: "Logo solo en el cierre y sobre placa clara"
+    peso: deseable
+    aplica_a: [reel]
+    como: visual
+    evidencia: ⚪
+    ref: 03-marca.md#consistencia-visual-en-los-reels
+  - id: M5
+    criterio: "Aparece Ana (cara, manos, voz, el local) cuando el material lo permite"
+    peso: deseable
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: ⚪
+    ref: 03-marca.md#activos-distintivos--ehrenberg-bass-sharp-romaniuk
+
+estrategia:
+  - id: E1
+    criterio: "El reel tiene un pilar claro (prueba / educación / personalidad / conversión)"
+    peso: deseable
+    aplica_a: [reel, historia, foto, carrusel]
+    como: guion
+    evidencia: ⚪
+    ref: 04-estrategia-de-contenido.md#pilares-de-contenido-
+  - id: E2
+    criterio: "Llamado a la acción único y concreto (MD/WhatsApp) o social (mandáselo a…)"
+    peso: importante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: guion
+    evidencia: ⚪
+    ref: 02-anatomia-del-reel.md#recompensa-y-cierre
+  - id: E3
+    criterio: "caption.txt nombra el servicio y la ciudad con palabras; ≤3 hashtags específicos"
+    peso: deseable
+    aplica_a: [reel, foto, carrusel]
+    como: guion
+    evidencia: 🟢
+    ref: 04-estrategia-de-contenido.md#búsqueda-y-google-
+  - id: E4
+    criterio: "La entrega sugiere invitar a la clienta como colaboradora (si aparece)"
+    peso: deseable
+    aplica_a: [reel, foto, carrusel]
+    como: guion
+    evidencia: 🟢/⚪
+    ref: 04-estrategia-de-contenido.md#colaboraciones-la-herramienta-local-más-fuerte-
+  - id: E5
+    criterio: "Si el material es solo fotos, se evaluó también la salida como carrusel"
+    peso: deseable
+    aplica_a: [reel]
+    como: guion
+    evidencia: 🟡
+    ref: 04-estrategia-de-contenido.md#reel-o-carrusel-
+
+oficio:   # que no parezca trucho y que sorprenda (07-edicion-y-estetica.md)
+  - id: O1
+    criterio: "Ningún movimiento lineal: zooms, paneos y textos con easing (entra ease-out, sale ease-in, se mueve ease-in-out)"
+    peso: importante
+    aplica_a: [reel, historia]
+    como: guion
+    evidencia: ⚪
+    ref: 07-edicion-y-estetica.md#3-movimiento-y-animación
+  - id: O2
+    criterio: "Cortes secos o transiciones motivadas (coincidencia, paneo rápido, tapar el lente); cero efectos de plantilla (giros, 3D, glitch sin motivo)"
+    peso: importante
+    aplica_a: [reel]
+    como: visual
+    evidencia: ⚪
+    ref: 07-edicion-y-estetica.md#2-lo-que-delata-una-edición-amateur-
+  - id: O3
+    criterio: "El ritmo varía para armar tensión (las tomas se acortan hacia el clímax y el revelado sostiene)"
+    peso: deseable
+    aplica_a: [reel]
+    como: guion
+    evidencia: ⚪
+    ref: 07-edicion-y-estetica.md#5-ritmo-y-sorpresa
+  - id: O4
+    criterio: "Cada movimiento de cámara tiene destino (cara, rulo, brillo) y no se repite el mismo en todas las tomas"
+    peso: deseable
+    aplica_a: [reel, historia]
+    como: guion
+    evidencia: ⚪
+    ref: 07-edicion-y-estetica.md#3-movimiento-y-animación
+  - id: O5
+    criterio: "Cada texto respeta el tiempo de lectura: ≤17 caracteres por segundo, mínimo 1 s en pantalla; como máximo 2 tipografías"
+    peso: importante
+    aplica_a: [reel, historia]
+    como: guion
+    evidencia: 🟡 (normas de subtítulos)
+    ref: 07-edicion-y-estetica.md#6-texto-en-pantalla
+  - id: O12
+    criterio: "Cada toma dura lo que marca el rango del formato (ritmo.yaml, con el ajuste del pedido); el revelado se sostiene 3-4 s. Exentos: barridos de transición"
+    peso: importante
+    aplica_a: [reel]
+    como: auto   # verificar.py --pedido
+    evidencia: "⚪ (práctica de edición) + preferencia de la marca"
+    ref: 08-ritmo.md
+  - id: O6
+    criterio: "Color coherente entre tomas y fiel al pelo (sin filtros que cambien el tono)"
+    peso: importante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: ⚪
+    ref: 07-edicion-y-estetica.md#7-color
+  - id: O7
+    criterio: "Si lleva audio: mezcla a ≈-14 LUFS, picos ≤-1 dBTP, voz por encima de la música, efectos solo en los momentos clave"
+    peso: deseable
+    aplica_a: [reel, historia]
+    como: auto
+    evidencia: ⚪
+    ref: 07-edicion-y-estetica.md#8-sonido-cuando-el-reel-lleva-audio-incluido
+  - id: O8
+    criterio: "Hay UN momento 'wow' diseñado y el guion dice cuál es (revelado, corte por coincidencia en el golpe fuerte, reacción, cámara lenta)"
+    peso: importante
+    aplica_a: [reel, carrusel]
+    como: guion
+    evidencia: ⚪
+    ref: 07-edicion-y-estetica.md#5-ritmo-y-sorpresa
+  - id: O9
+    criterio: "Encuadres limpios: no corta cabezas ni lo importante; el sujeto queda dentro de la zona segura"
+    peso: importante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: ⚪
+    ref: 07-edicion-y-estetica.md#2-lo-que-delata-una-edición-amateur-
+  - id: O10
+    criterio: "Final limpio o en bucle (el último cuadro empalma con el primero)"
+    peso: deseable
+    aplica_a: [reel]
+    como: visual
+    evidencia: 🟢 (las repeticiones suman tiempo de visualización)
+    ref: 02-anatomia-del-reel.md#recompensa-y-cierre
+
+  - id: O11
+    criterio: "Dirección de arte propia: tipografía de display de la marca, gráficos propios y al menos una transición diseñada. Nada del look por defecto de las apps (fuente genérica en cajita)"
+    peso: bloqueante   # la v1 de los pochoclos sacaba 92 % y se veía pobre: la estética no puede compensarse con puntos
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: "⚪ (aprendido en la v1 de los pochoclos)"
+    ref: 07-edicion-y-estetica.md#2b-lo-que-delata-el-editor-de-instagram-aprendido-en-la-factory
+
+relato:   # cuando alguien cuenta algo a cámara (13-divulgacion.md); no aplica si nadie habla
+  - id: N1
+    criterio: "El relato se entiende leyendo los tramos de voz seguidos, sin mirar el video: tiene y / pero / por lo tanto, y cada tramo nombra lo que necesita el siguiente"
+    peso: bloqueante   # la v4 de «El Extranjero» sacaba 82 % y no se entendía de qué trataba
+    aplica_a: [reel, historia]
+    como: guion
+    evidencia: "⚪ ABT (Olson) · 🟢 coherencia (Mayer)"
+    ref: 13-divulgacion.md#2-la-narración-que-sea-una-historia-y-no-frases-sueltas
+  - id: N2
+    criterio: "Las frases quedan enteras: se corta al final de una oración o de una unidad de entonación cerrada, nunca adentro; el saludo final, entero; ningún recorte cambia lo que quiso decir"
+    peso: bloqueante   # cortar adentro de la frase se escucha incompleto y puede deformar lo dicho (normas de PBS, NPR, BBC)
+    aplica_a: [reel, historia]
+    como: guion
+    evidencia: "🟢 prosodia (Bögels y Torreira 2015) · 🟢 normas de edición periodística"
+    ref: 13-divulgacion.md#53-las-frases-tienen-que-quedar-enteras
+  - id: N3
+    criterio: "Cada imagen insertada muestra lo que se nombra en ese momento (representa, interpreta u organiza); nada de imágenes «de la época» o decorativas"
+    peso: importante
+    aplica_a: [reel, historia]
+    como: guion
+    evidencia: "🟢 Brosius y otros 1996 · Carney y Levin 2002 · Rey 2012"
+    ref: 13-divulgacion.md#51-la-imagen-tiene-que-ser-lo-que-se-dice-no-algo-de-la-época
+  - id: N4
+    criterio: "Si el gancho adelanta un momento que vuelve después, se ve distinto (blanco y negro, voz en off) y la frase vuelve completa en su lugar"
+    peso: deseable
+    aplica_a: [reel]
+    como: visual
+    evidencia: "🟡 Calvert 1988 · convención de cine · 🟢 transparencia (BBC)"
+    ref: 13-divulgacion.md#52-el-gancho-como-adelanto-tiene-que-verse-distinto
+
+calidad:   # lo que el público y el algoritmo perciben como "trucho" (12-calidad-percibida.md)
+  - id: Q1
+    criterio: "Nitidez: ninguna toma se ve blanda o pixelada (fuente ampliada ≤1,5×, o la ampliación no se nota en el celular)"
+    peso: importante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: auto   # verificar.py: ampliación por toma
+    evidencia: "🟢 Instagram muestra menos lo borroso o de baja resolución"
+    ref: 12-calidad-percibida.md#1-lo-que-instagram-mismo-muestra-menos-
+
+  - id: Q2
+    criterio: "Si alguien habla, se entiende lo que dice en la mezcla final (la música no lo tapa)"
+    peso: importante
+    aplica_a: [reel, historia]   # no aplica si nadie habla
+    como: auto   # verificar.py: Whisper sobre el reel terminado
+    evidencia: "🟡 audio malo = orador menos creíble (USC/ANU)"
+    ref: 12-calidad-percibida.md#2-audio-lo-que-más-resta-
+
+  - id: Q3
+    criterio: "Original: no es casi un duplicado de un reel ya publicado (gancho, orden, encuadres, textos y audio nuevos; mejor si mezcla material de más de un reel)"
+    peso: importante
+    aplica_a: [reel]
+    como: guion
+    evidencia: "🟡 Instagram detecta duplicados y les baja el alcance, incluso los propios"
+    ref: 12-calidad-percibida.md#1-lo-que-instagram-mismo-muestra-menos-
+
+  - id: Q4
+    criterio: "Nada de personas, pelo ni local generados o redibujados con IA presentados como reales (la IA solo en diseño gráfico)"
+    peso: bloqueante
+    aplica_a: [reel, historia, foto, carrusel]
+    como: visual
+    evidencia: "🟡 la IA que se nota baja la confianza en la marca"
+    ref: 12-calidad-percibida.md#5-ia-cuándo-resta-
+
+  - id: Q5
+    criterio: "La música no se repite en otro reel de la cuenta (cada reel, un tema distinto)"
+    peso: importante
+    aplica_a: [reel]
+    como: auto   # verificar.py: compara musica.fuente con los otros pedidos (musica.py --usados)
+    evidencia: "⚪ con la misma música, los reels se ven todos iguales en el perfil (Fernando, 04/10/2026); 🟡 Instagram detecta audio repetido como señal de duplicado"
+    ref: 09-audio.md#los-tres-modos-musicamodo-en-el-guion-o-en-pedidoyaml
+
+humano:   # no puntúan; se listan como pendientes en la evaluación
+  - id: H1
+    criterio: "La clienta dio su OK para aparecer"
+    ref: 05-publicidad.md#permiso-de-las-clientas
+  - id: H2
+    criterio: "Ana lo reconoce como suyo (le gusta, se siente su voz)"
+    ref: 03-marca.md#tono-de-voz

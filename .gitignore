@@ -1,0 +1,59 @@
+# Credenciales de sesión (cookies de Instagram para bajar.py): nunca se versionan
+secretos/
+
+# Python
+.venv/
+__pycache__/
+
+# Node / motores
+node_modules/
+renders/
+
+# Medios de los pedidos: pesan y tienen caras de clientas. Se versionan
+# pedido.yaml, guion.yaml y los .json del análisis, no los videos.
+pedidos/*/entrada/
+pedidos/*/analisis/fotogramas/
+pedidos/*/analisis/*.jpg
+pedidos/*/analisis/*.png
+pedidos/*/render/*
+# …salvo las composiciones a medida, que son código (no tienen medios)
+!pedidos/*/render/armar.py
+pedidos/*/salida/*
+# …salvo las métricas de lo publicado: son números, sin caras, y la factory aprende de ellas
+!pedidos/*/salida/metricas.md
+marcas/*/biblioteca/reels/
+marcas/*/biblioteca/hojas/
+marcas/*/biblioteca/fotos/
+marcas/*/biblioteca/.tmp/
+*.info.json
+*.mp4
+*.mov
+*.m4a
+*.ogg
+*.mp3
+*.wav
+
+# Muestras de estilos sí se versionan (son pocas y livianas)
+!estilos/*/muestra.mp4
+
+# Binarios descargados (Real-ESRGAN, M-04): pesan y se bajan de su release oficial
+herramientas/bin/
+
+# Repo público: lo que no se versiona
+.env
+.env.*
+*.db
+*.sqlite
+secretos/
+pedidos/*
+!pedidos/_plantilla/
+marcas/*/assets/logo*
+marcas/*/assets/vouchers/
+marcas/*/biblioteca/
+marcas/*/metricool/
+marcas/*/metricas.md
+musica/libre/
+# Skills de terceros (HyperFrames, Remotion): se instalan desde skills-lock.json
+.claude/skills/*
+!.claude/skills/reel/
+.agents/

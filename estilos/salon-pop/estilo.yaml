@@ -1,0 +1,54 @@
+# Estilo "salon-pop" — dirección de arte de Salón Demo para reels de proceso y resultado.
+# Motor: herramientas/armar_pop.py; tokens y CSS base en herramientas/salon_pop.py. Primer uso: pedidos/2026-10-03-salon-demo-pochoclos (v2).
+
+para: [proceso, transformacion, resultado]
+energia: media-alta        # cortes en el beat con golpe de zoom; revelado lento
+
+tipografia:
+  titulos: "Fraunces itálica 900, 104 px (92 px si el texto pasa 26 caracteres), entrada palabra por palabra enmascarada (power4.out, 0,07 s entre palabras)"
+  clave: "la palabra clave lleva un resaltador magenta que se pinta de izquierda a derecha"
+  stickers: "Montserrat 800 en mayúsculas, píldora blanca con texto magenta, rotada -4°, entrada back.out"
+  cierre: "CTA en Fraunces itálica magenta; ciudad en Montserrat 800 espaciada"
+
+color:
+  correccion: "contrast 1.07 · saturate 1.16 · brightness 1.03"
+  capas: "durazno #ff9a6a en soft-light al 16 % · viñeta ciruela · grano de película al 11 % que cambia 12 veces por segundo"
+  legibilidad: "automática (legibilidad.py): fondo oscuro o medio → sombra difusa ciruela (no caja); fondo claro (p75 de luminancia ≥ 0,40) → palabras en bloques magenta con la clave invertida"
+
+graficos: "destellos de 4 puntas (blanco rosado, dorado #F5C76B, rosa claro) que aparecen y respiran"
+
+transiciones:
+  golpe: "escala 1,14 → 1 en 0,28 s (cortes del proceso)"
+  zoom: "escala 1,45 + desenfoque 22 px → 0 en 0,42 s (entrada al proceso)"
+  barrido: "desplazamiento 38 % + desenfoque 18 px en 0,34 s (cambio de tema, reacción)"
+  luz: "destello de luz cálida que cruza + brillo 1,9 → 1 (revelado)"
+  iris: "apertura circular de la placa rosa hacia el cierre (0,55 s)"
+
+posicion:
+  titulos: "línea inferior al 62 % del alto; crecen hacia arriba. Si en sus tomas hay una cara a esa altura, el motor busca la línea libre más cercana (caras.py)"
+  stickers: "17 % desde arriba, 8 % desde la izquierda"
+
+recursos_extra:   # probados en pedidos/2026-10-03-salon-demo-rulos-pop (render/armar.py)
+  palabra_ventana: "palabra gigante (Fraunces 360 px) rellena con una foto (background-clip: text) + zoom a través de la palabra hacia esa foto"
+  sale_del_marco: "foto en una tarjeta redondeada con borde blanco; el recorte de la persona (rembg isnet-general-use + alpha matting) va encima, recortado solo abajo y a los costados, así la cabeza sobresale"
+  dos_y_medio_d: "fondo con desenfoque leve y recorte de la persona a distinta escala y velocidad"
+  grilla: "2×2 con borde blanco y sombra; cada celda entra en un beat con back.out y rotación leve"
+  anotaciones: "trazos SVG que se dibujan (stroke-dashoffset) + Caveat 700 magenta con halo blanco"
+  titulos_en_bloques: "cada palabra sobre un bloque magenta y la clave invertida (blanco con letra magenta), para títulos sobre foto"
+  comparar: "pantalla dividida antes | después en el motor (tomas[].comparar): el después barre hasta la mitad, cada lado centra a su sujeto, etiquetas a la altura del torso y al final el después ocupa todo (pedidos/2026-10-03-salon-demo-antes-despues)"
+  corte_por_coincidencia: "mismo gesto en el antes y en el después (manos levantando el pelo), corte en el punto alto + entrada luz"
+  barridos_reales: "en un video que recorre el local, los tramos movidos del giro acelerados ×2-3 son barridos de cámara naturales entre tomas (pedidos/2026-10-03-salon-demo-dia-de-trabajo)"
+
+aprendido:
+  - "v1 se veía 'editor de Instagram': Poppins sobre cajita oscura (el estilo por defecto de las apps), solo cortes secos, sin gráficos ni color."
+  - "Texto al 26 %: tapaba el sujeto y las caras. Mirar la hoja de control antes de fijar la altura."
+  - "background-clip: text no sobrevive a hijos transformados: animar la palabra entera (máscara con clip-path), no letra por letra."
+  - "Si el texto es del mismo color que el resaltador, desaparece: pasar la palabra a blanco mientras se pinta."
+  - "Recortes: rembg funciona bien con cabezas de perfil o de espaldas; falla con fotos de costado con mucho fondo parecido (foto-03). Revisar cada recorte sobre un color plano."
+  - "Texto quemado en el original (el editor de Instagram lo deja abajo, en la zona que tapa la interfaz): encuadre manual que lo deja afuera (preparar_clips: encuadre)."
+  - "Selfie en el espejo: voltear la toma (espejar) para que el cartel se lea al derecho."
+  - "Etiquetas de comparación arriba (17 %) tapaban el pelo, que es justo lo que se compara: van a la altura del torso."
+  - "Cámara lenta interpolada (minterpolate mci) sobre un paneo destrozó el cartel en la v2 del 'día de trabajo': solo en tomas quietas; con paneo, mezcla de cuadros, y mejor tomar más segundos de fuente."
+  - "Sombra difusa sobre pared blanca: queda como una mancha gris y no llega a 3:1 (día de trabajo, pochoclos). Desde M-01 esos títulos van en bloques magenta solos."
+  - "Ampliar con IA (Real-ESRGAN, M-04): le inventa textura al pelo; se descartó. Ampliación con lanczos y enfoque leve."
+  - "Ritmo: a 120 bpm con tomas de 0,5-2 s los reels se sentían apurados; el estilo va a 95-110 bpm con tomas de 1,5-3 s (conocimiento/ritmo.yaml)."
